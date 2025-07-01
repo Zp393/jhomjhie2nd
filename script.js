@@ -1,3 +1,23 @@
+//Navbar
+  const toggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const icon = document.getElementById('menu-icon');
+
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    icon.classList.toggle('bx-menu');
+    icon.classList.toggle('bx-x');
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      icon.classList.add('bx-menu');
+      icon.classList.remove('bx-x');
+    });
+  });
+
 
   const track = document.querySelector('.carousel-track');
   const imageCount = track.children.length / 2; // Since we have duplicates
@@ -49,6 +69,34 @@
             document.querySelector(".countdown-timer").innerHTML = "Event has started!";
         }
     }, 1000);
+
+
+
+  // Get elements
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox-close");
+  const galleryItems = document.querySelectorAll(".gallery-item img");
+
+  // When any image is clicked
+  galleryItems.forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "block";
+      lightboxImg.src = img.src;
+    });
+  });
+
+  // Close lightbox on click
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  // Optional: Click anywhere outside image to close
+  lightbox.addEventListener("click", (e) => {
+    if (e.target !== lightboxImg) {
+      lightbox.style.display = "none";
+    }
+  });
 
 // Lovestory
     function toggleReadMore() {

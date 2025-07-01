@@ -21,7 +21,11 @@ body {
   color: var(--text-color);
 }
 
+
 .navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   width: 100%;
@@ -31,23 +35,64 @@ body {
   z-index: 1000;
 }
 
-.navbar ul {
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.nav-links {
   list-style: none;
   display: flex;
-  justify-content: center;
   gap: 30px;
 }
 
-.navbar a {
+.nav-links a {
   text-decoration: none;
   color: var(--text-color);
   font-weight: bold;
   transition: color 0.3s;
 }
 
-.navbar a:hover {
+.nav-links a:hover {
   color: #b08e6e;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar{
+    display: flex;
+    justify-content: end;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--background-color);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    padding: 10px;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
 
 /* Carousel */
 .carousel {
@@ -156,28 +201,28 @@ body {
     margin: 10px 0;
 }
 
-.countdown {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .message-content {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center align items */
+    width: 90%; /* Use more width on smaller screens */
+  }
 
-.countdown-timer {
-    display: flex;
-    gap: 15px; /* Space between countdown items */
-}
+  .couple-image {
+    width: 100%; /* Set image to full width */
+    max-width: 300px; /* Optional: limit max width */
+    margin-right: 0; /* Remove margin for mobile */
+    margin-bottom: 20px; /* Add space below image */
+  }
 
-.countdown-item {
-    text-align: center;
-}
+  .special-message h2 {
+    font-size: 2rem; /* Smaller heading size */
+  }
 
-.countdown-value {
-    font-size: 2rem; /* Size for countdown numbers */
-    font-weight: bold;
-}
-
-.countdown-label {
-    font-size: 1rem; /* Size for countdown labels */
+  .special-message p {
+    font-size: 1rem; /* Smaller paragraph size */
+  }
 }
 
 
@@ -296,7 +341,34 @@ body {
       background-color: var(--button-hover); /* Darker color on hover */
     }
 
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .love-story {
+        flex-direction: column; /* Stack images and text vertically */
+        align-items: center; /* Center align items */
+        padding: 1.5rem; /* Reduce padding on mobile */
+    }
 
+    .love-story img {
+        width: 50%; /* Set image to 90% width on mobile */
+        max-width: 300px; /* Optional: limit max width */
+        margin: 0 0 20px 0; /* Remove side margins and add bottom margin */
+    }
+
+    .story-text {
+        margin: 1rem 0; /* Adjust margin for text */
+        max-width: 100%; /* Allow text to take full width */
+    }
+
+    .story-text h2 {
+        font-size: 2rem; /* Smaller heading size */
+    }
+
+    .read-more-button {
+        width: 100%; /* Full width button on mobile */
+    }
+
+}
 
 /* Venue Section */
 
@@ -318,7 +390,13 @@ body {
     margin-bottom: 20px;
 }
 
-.content {
+.content1 {
+    display: flex; /* Use flexbox to align items side by side */
+    align-items: flex-start; /* Align items at the start */
+    gap: 20px; /* Space between image and content */
+}
+
+.content2 {
     display: flex; /* Use flexbox to align items side by side */
     align-items: flex-start; /* Align items at the start */
     gap: 20px; /* Space between image and content */
@@ -374,6 +452,48 @@ body {
     background-color: var(--button-hover);
 }
 
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .content1 {
+        flex-direction: column; /* Stack image and description vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .venue-image {
+        width: 100%; /* Full width on mobile */
+        max-width: 300px; /* Optional: limit max width */
+        margin-bottom: 20px; /* Space below the image */
+    }
+
+
+    .content2{
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    .venue-description {
+        padding: 10px; /* Reduce padding on mobile */
+        width: 100%; /* Allow description to take full width */
+    }
+
+    .venue-title {
+        font-size: 1.8rem; /* Smaller heading size */
+    }
+
+    .details h4 {
+        font-size: 1.5rem; /* Smaller subheading size */
+    }
+
+    .welcome {
+        font-size: 16px; /* Smaller welcome text size */
+    }
+
+    .button {
+        width: 100%; /* Full width button on mobile */
+        padding: 12px; /* Increase padding for easier tapping */
+    }
+}
 
 
 /*Dress Code */
@@ -395,13 +515,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 40px;
-}
-
-@media (min-width: 768px) {
-  .content-wrapper {
-    flex-direction: row;
-    align-items: flex-start;
-  }
 }
 
 .text-content {
@@ -461,6 +574,13 @@ blockquote {
   font-size: 1rem;
   font-style: italic;
   color: #6a6a6a;
+}
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
 
 
@@ -656,6 +776,60 @@ blockquote {
   object-fit: cover;
   display: block;
   border-radius: 12px;
+}
+
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+  text-align: center;
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 45px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lightbox-close:hover {
+  color: #bbb;
+}
+
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on very small screens */
+  }
 }
 
 

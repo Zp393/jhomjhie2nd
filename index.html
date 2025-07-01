@@ -6,13 +6,18 @@
   <title>Special Day for your Wedding</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
   
 </head>
 <body>
 
   <!-- Navigation Bar -->
-  <nav class="navbar">
-    <ul>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="menu-icon" id="menu-toggle">
+      <i class='bx bx-menu' id="menu-icon"></i>
+    </div>
+    <ul class="nav-links" id="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#venue">Venue</a></li>
       <li><a href="#dresscode">Dress Code</a></li>
@@ -20,7 +25,8 @@
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
-  </nav>
+  </div>
+</nav>
 
   <!-- Smooth Image Slider -->
   <section class="carousel" id="home">
@@ -153,11 +159,11 @@
 
 </section>
 
+<!--Venue-->
 <section class="venue-section" id="venue">
     <h2>Ceremony</h2><br>
     <p class="welcome">Welcome to our cherished ceremony venue, where love and joy unite.<br> This beautiful church is the perfect setting for our special day.</p>
-    <div class="content">
-        
+    <div class="content1">
         <div class="venue-description">
             <h3 class="venue-title">Church Location</h3>
             <div class="details">
@@ -178,7 +184,7 @@
 <section class="venue-section">
     <h2>Reception</h2><br>
     <p class="welcome">Welcome to our beautiful venue where elegance meets comfort.<br> Our space is perfect for all kinds of events, from weddings to corporate gatherings.</p>
-    <div class="content">
+    <div class="content2">
         <img src="images/venue.jpg" alt="Venue Image" class="venue-image"/>
         <div class="venue-description">
             <h3 class="venue-title">Venue Location</h3>
@@ -201,7 +207,7 @@
 <section class="dress-code-section" id="dresscode">
   <div class="container">
     <div class="content-wrapper">
-      <!-- Left: Dress Code Text -->
+      <!-- Left: Dress Code Text-->
       <div class="text-content">
         <h2>Dress Code</h2>
         <p class="intro">Dress to Impress — with Love & Elegance</p>
@@ -215,7 +221,7 @@
         </div>
 
         <div class="color-palette">
-          <p><strong>🎨 Color Palette:</strong> Kindly avoid wearing white, off-white, or champagne</p>
+          <p><strong>🎨 Color Palette:</strong> Kindly avoid wearing white, off-white, or champagne</p><br>
           <p><strong>🌸 Suggested Colors:</strong> Dusty Blue, Sage Green, Blush Pink, Taupe, Neutrals</p>
           <div class="swatches">
             <span style="background-color: #A8C3D0;" title="Dusty Blue"></span>
@@ -228,7 +234,7 @@
 
       </div>
 
-      <!-- Right: Image -->
+      <!-- Right: Image-->
       <div class="image-content">
         <img src="images/dressattire.png" alt="Dress Code Inspiration" />
       </div>
@@ -244,7 +250,7 @@
     <p class="intro">Meet the amazing people standing beside us on our big day.</p>
 
     <div class="party-rows">
-      <!-- Top Row -->
+      <!-- Top Row-->
       <div class="party-row">
         <div class="party-member">
           <img src="images/maidofhonor.jpg" alt="Maid of Honor">
@@ -261,7 +267,7 @@
         </div>
       </div>
 
-      <!-- Bottom Row -->
+      <!-- Bottom Row-->
       <div class="party-row">
         <div class="party-member">
           <img src="images/bridesmaid.jpg" alt="Bridesmaid">
@@ -428,7 +434,7 @@
     <p class="intro">Here’s a look at the memories we’ve captured before our big day.</p>
 
     <div class="gallery-grid">
-      <!-- Replace the image paths with your actual pre-nup photos -->
+      <!-- Replace the image paths with your actual pre-nup photos-->
       <div class="gallery-item"><img src="images/a.jpg" alt="Prenup Photo 1"></div>
       <div class="gallery-item"><img src="images/b.jpg" alt="Prenup Photo 2"></div>
       <div class="gallery-item"><img src="images/c.jpg" alt="Prenup Photo 3"></div>
@@ -450,7 +456,14 @@
       <div class="gallery-item"><img src="images/s.jpg" alt="Prenup Photo 19"></div>
       <div class="gallery-item"><img src="images/t.jpg" alt="Prenup Photo 20"></div>
     </div>
-  </div>
+  </div><P></P>
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
+
+
 </section>
 
 
@@ -493,7 +506,7 @@
       To ensure a smooth and enjoyable experience for everyone, we’ve put together answers to some frequently asked questions.
     </p>
 
-    <!-- Wedding Ceremony -->
+    <!-- Wedding Ceremony-->
     <h3 class="faq-category">📍 Wedding Ceremony</h3>
     <div class="faq-item">
       <button class="faq-question">What time does the ceremony start?</button>
@@ -509,7 +522,7 @@
       </div>
     </div>
 
-    <!-- Wedding Reception -->
+    <!-- Wedding Reception-->
     <h3 class="faq-category">🎉 Wedding Reception</h3>
     <div class="faq-item">
       <button class="faq-question">Will there be dinner served?</button>
@@ -525,7 +538,7 @@
       </div>
     </div>
 
-    <!-- RSVP & Attendance -->
+    <!-- RSVP & Attendance-->
     <h3 class="faq-category">📩 RSVP & Attendance</h3>
     <div class="faq-item">
       <button class="faq-question">Can I bring a guest?</button>
@@ -541,7 +554,7 @@
       </div>
     </div>
 
-    <!-- Other Information -->
+    <!-- Other Information-->
     <h3 class="faq-category">🗒️ Other Information</h3>
     <div class="faq-item">
       <button class="faq-question">Is there parking available?</button>
